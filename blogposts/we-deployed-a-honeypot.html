@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Blog Post - Secure Hours</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alata&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alatsi&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alef&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alkalami&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amarante&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Andika&amp;display=swap">
+    <link rel="stylesheet" href="../assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="../assets/css/Articles-Cards-images.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/Navbar-Right-Links-icons.css">
+    <link rel="stylesheet" href="../assets/css/Simple-Slider-Simple-Slider.css">
+    <link rel="stylesheet" href="../assets/css/vanilla-zoom.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="../index.html">Secure Hours</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog.html">BLOG</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../art.html">ART</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../photography.html">PHOTOGRAPHY</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page blog-post">
+        <section class="clean-block clean-post dark">
+            <div class="container">
+                <div class="block-content">
+                    <div class="post-body">
+                        <h3>We deployed a Honeypot.</h3>
+                        <div class="post-info"><span>March 14, 2022</span></div>
+                        <p style="font-size: 16.4px;"><br><em>Note: In keeping with our vision of spreading security awareness,&nbsp;this article has been written under the assumption that the idea of a&nbsp;honeypot is new to the reader.</em><br><br></p>
+                        <p style="font-size: 16.4px;"><br>No, we didn’t place a huge round pot filled with honey on our cyber defense line.<br></p>
+                        <p style="font-size: 16.4px;">Honeypots are computer systems intended to simulate a likely target of cyberattacks. They act as a virtual trap to lure attackers by allowing them to exploit vulnerabilities. As a security mechanism, honeypots are often used to study breaches and improve the security policies of the organisation to better respond to real-world attacks.<br></p>
+                        <p style="font-size: 16.4px;">For analysis on a larger scale, organisations usually create and deploy their own honeypots on the cloud. This broadens the visibility scope of the virtual target, thus inviting a variety and an abundance of exploitation. Security analysts review each of the breaches and suggest improvements to the security policies of the company. Major companies including Panasonic have greatly strengthened the security of their products by using internet honeypots.<br></p>
+                        <p style="font-size: 16.4px;">On a smaller scale, remote honeypots are an efficient way to study attacks. These are deployed on a remote network instead of the cloud; here, using virtual machines is a safer option as compared to deploying the target on a personal system. For educational purposes, we deployed PenTBox’s remote honeypot on Kali Linux.<br></p>
+                        <figure class="figure"></figure>
+                        <h1 style="font-size: 23.388px;font-weight: bold;">Deploying a remote Honeypot using PenTBox</h1>
+                        <p style="font-size: 16.4px;"><br>We use the terminal window for this. As we already had PenTBox installed on our Kali box, the installation step has not been shown. To install PenTBox, you can use the command<br><code style="font-size: 16.35px;"><br><em><span style="color: rgb(33, 37, 41);">wget&nbsp;</span></em><a href="http://sourceforge.net/projects/pentbox18realised/pentbox-1.8.tar.gz"><em><span style="color: var(--bs-link-color);">http://sourceforge.net/projects/pentbox18realised/pentbox-1.8.tar.gz</span></em></a><br><br></code>for downloading the files, followed by&nbsp;&nbsp;<br><code style="font-size: 16.35px;"><br><em><span style="color: rgb(33, 37, 41);">tar xvfz pentbox-1.8.tar.gz</span></em><br><br></code>for extracting them.<br><br></p>
+                        <p style="font-size: 16.4px;">We first enter the directory containing the PenTBox folder, and use&nbsp;<br><code style="font-size: 16.35px;"><br><em><span style="color: rgb(33, 37, 41);">./pentbox.rb</span></em><br><br></code>to run it.</p><img src="../assets/img/1.jpg" width="552" height="400">
+                        <p style="font-size: 16.4px;"><br>Honeypots are a part of network tools, so we enter the Network Tools section and choose Honeypot from the menu by entering the appropriate serial number in the prompt. At the introductory level, defaults are always the best, so we go with Fast Auto Configuration.<br></p><img src="../assets/img/2.jpg" width="588" height="437">
+                        <p style="font-size: 16.4px;"><br>And voila! Our honeypot has been activated on port 80. Now we shall try breach this vulnerable target. We open our standard web browser,&nbsp; Mozilla Firefox, and try to access our Kali box by entering <br><code style="color: rgb(25,0,0);font-size: 16.35px;"><br><em><span style="color: rgb(13, 110, 253);">http://&lt;IP_of_our_Kali_box&gt;</span></em><br><br></code>We expect an error, and an error is what we get.<br><br></p><img src="../assets/img/3.jpg" width="573" height="150">
+                        <p style="font-size: 16.4px;"><br>Nothing unusual, right? Let’s switch back to our terminal window. Here, what’s interesting to observe is the output displayed now: the honeypot caught the intrusion attempt and provided us with some useful information about the attacker’s system.<br></p><img src="../assets/img/4.jpg" width="563" height="383">
+                        <p style="font-size: 16.4px;"><br>Thus, we successfully deployed and tested our remote honeypot. The data returned by the honeypot makes it an incredibly useful security tool and helps stay updated with the latest breaching techniques.<br></p>
+                        <p style="font-size: 16.4px;"><br>Not every attack can be stopped, and honeypots are a great way to detect and study breaches without the system actually being compromised. In large organisations, honey nets are also being used to monitor more diverse networks in which one honeypot may prove insufficient. These include not only vulnerable servers and systems, but also intentionally susceptible firewalls, routers, and security applications. The international security research organisation <strong>Honeynet Project</strong>&nbsp; actively investigates attacks and develops open-source tools to improve internet security.<br></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer dark" style="height: 197px;">
+        <div class="clean-block add-on social-icons" style="height: 95px;">
+            <div class="icons"><a href="https://www.twitter.com/securehours"><i class="icon-social-twitter"></i></a><a href="https://www.instagram.com/securehours"><i class="icon-social-instagram"></i></a><a href="https://www.linkedin.com/company/securehours"><i class="icon-social-linkedin"></i></a></div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2022 Secure Hours</p>
+        </div>
+    </footer>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+    <script src="../assets/js/vanilla-zoom.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+    <script src="../assets/js/Simple-Slider.js"></script>
+</body>
+
+</html>
